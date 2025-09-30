@@ -38,7 +38,7 @@ export default function DashboardClientPage({ session }: { session: Session }) {
                     height={40}
                     alt = "image"
                     src={
-                      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+                      user.name[0]
                     }
                   />
                   <div className="text-sm">
