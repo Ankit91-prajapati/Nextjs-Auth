@@ -1,7 +1,6 @@
 "use client";
 import { signOut } from "@/actions/auth-actions";
 import { auth } from "@/lib/auth";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -33,7 +32,7 @@ export default function DashboardClientPage({ session }: { session: Session }) {
               </div>
               <div className="flex items-center space-x-3">
                 <div className="flex items-center space-x-3">
-                  <Image
+                  <img
                     className=" rounded-full"
                     width={40}
                     height={40}
