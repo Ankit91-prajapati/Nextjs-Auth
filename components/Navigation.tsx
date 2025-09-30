@@ -34,7 +34,7 @@ export default function Navigation({ session }: { session: Session | null }) {
               </svg>
             </div>
             <span className="text-xl font-bold text-gray-900">
-              Better-Auth Demo
+              Authentication
             </span>
           </Link>
 

@@ -1,9 +1,10 @@
-import Image from "next/image";
+
 
 export default function Home() {
   return (
     <div className="w-screen h-screen bg-gradient-to-t from-blue-600 to-slate-300">
-      <div className="relative w-full h-64 bg-blue-300 overflow-hidden">
+      <div className="relative w-full h-64 bg-blue-300 overflow-hidden flex flex-row items-center justify-center">
+     
         <svg
           className="absolute bottom-0 w-full h-24"
           viewBox="0 0 1440 320"
