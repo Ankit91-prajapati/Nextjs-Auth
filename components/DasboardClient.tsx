@@ -1,5 +1,5 @@
 "use client";
-import { signOut } from "@/actions/auth-actions";
+import { authClient } from "@/actions/auth-client";
 import { auth } from "@/lib/auth";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -11,10 +11,14 @@ export default function DashboardClientPage({ session }: { session: Session }) {
   const user = session.user;
 
   const handleSignOut = async () => {
-    await signOut();
-    router.push("/auth");
-  };
-
+   await authClient.signOut({
+  fetchOptions: {
+    onSuccess: () => {
+      router.push("/auth"); // redirect to login page
+    },
+  },
+});
+}
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-400 to-indigo-100">
       {/* Main Content */}
@@ -37,9 +41,8 @@ export default function DashboardClientPage({ session }: { session: Session }) {
                     width={40}
                     height={40}
                     alt = "image"
-                    src={
-                      user.name[0]
-                    }
+                    
+                    
                   />
                   <div className="text-sm">
                     <p className="text-gray-900 font-medium">{user.name}</p>
