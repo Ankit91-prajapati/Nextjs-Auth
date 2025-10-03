@@ -14,6 +14,7 @@ export default function DashboardClientPage({ session }: { session: Session }) {
    await authClient.signOut({
   fetchOptions: {
     onSuccess: () => {
+      router.refresh()
       router.push("/auth"); // redirect to login page
     },
   },
