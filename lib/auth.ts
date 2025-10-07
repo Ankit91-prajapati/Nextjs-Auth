@@ -3,6 +3,7 @@ import { nextCookies } from "better-auth/next-js";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { PrismaClient } from "@/lib/generated/prisma";
 import { sendEmail } from "./email";
+import { emailOTP } from "better-auth/plugins";
 const prisma = new PrismaClient();
 
 export const auth = betterAuth({
@@ -17,7 +18,6 @@ export const auth = betterAuth({
 
   emailVerification: {
     sendOnSignUp: true,
-    sendOnSignIn:true,
     autoSignInAfterVerification: true,
     sendVerificationEmail: async ({ user, url }) => {
       await sendEmail({
@@ -26,8 +26,15 @@ export const auth = betterAuth({
         html: `<p>${user.name}</p> <p>click here : <a href="${url}">verify email</a></p>`,
       });
     },
-  },
+    afterEmailVerification:async (user) => {
+      await sendEmail({
+        to: user.email,
+        subject: "successfully verified",
+        html: `<p>${user.name}</p>your verfied email:<p>:${ user.email}</p>`,
+      });
+    }
 
+    },
   socialProviders: {
     github: {
       clientId: process.env.GITHUB_CLIENT_ID as string,
@@ -39,5 +46,18 @@ export const auth = betterAuth({
     },
   },
 
-  plugins: [nextCookies()],
+  plugins: [nextCookies() , 
+    emailOTP({
+     async sendVerificationOTP({email , otp , type}){
+      if(type === "sign-in"){
+        await sendEmail({to:email , subject:"email verification",text:`Otp for email verification${otp} ` })
+      }
+
+      else if(type === "forget-password") {
+          await sendEmail({to:email , subject:"email verification",text:`Otp for password reset${otp} `})
+         
+      }
+     }
+    })
+  ],
 });

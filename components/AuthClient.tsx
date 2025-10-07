@@ -289,7 +289,7 @@ export default function AuthClientPage() {
           </form>
 
           {/* Toggle between Sign In and Sign Up */}
-          <div className="text-center">
+          <div className="text-center flex flex-col">
             <button
               type="button"
               onClick={() => {
@@ -303,6 +303,7 @@ export default function AuthClientPage() {
                 ? "Don't have an account? Sign up"
                 : "Already have an account? Sign in"}
             </button>
+             <button><a href="/auth/forget-password/email-otp">change password</a></button>
           </div>
         </div>
       </div>
