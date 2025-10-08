@@ -303,7 +303,8 @@ export default function AuthClientPage() {
                 ? "Don't have an account? Sign up"
                 : "Already have an account? Sign in"}
             </button>
-             <button><a href="/auth/forget-password/email-otp">change password</a></button>
+
+             <button><a href="/auth/forget-password/" className="text-blue-600 hover:scale-50">change password</a></button>
           </div>
         </div>
       </div>

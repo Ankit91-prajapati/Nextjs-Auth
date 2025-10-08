@@ -56,34 +56,49 @@ function ForgetPasswordFlow() {
   };
 
   return (
-    <div>
+    <div className="flex flex-col h-screen bg-white gap-5">
       <h2>🔐 Forgot Password</h2>
+      <div className="flex flex-row items-center justify-center">
+  <div className="flex flex-col gap-5 w-[300px] h-[300px] bg-indigo-600 items-center justify-center">
+        <div  className="flex flex-col">
+          <input
+            className="bg-zinc-400"
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <button onClick={sendOtp} className="hover:text-blue-700" >Send OTP</button>
+        </div>
 
-      <input
-        type="email"
-        placeholder="Enter your email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <button onClick={sendOtp}>Send OTP</button>
+        <div  className="flex flex-col">
+          <input
+            className="bg-zinc-400"
+            type="text"
+            placeholder="Enter OTP"
+            value={otp}
+            onChange={(e) => setOtp(e.target.value)}
+          />
+          <button onClick={verifyOtp} className="hover:text-blue-700">Verify OTP</button>
+        </div>
 
-      <input
-        type="text"
-        placeholder="Enter OTP"
-        value={otp}
-        onChange={(e) => setOtp(e.target.value)}
-      />
-      <button onClick={verifyOtp}>Verify OTP</button>
+        <div  className="flex flex-col">
+          <input
+           className="bg-zinc-400"
+            type="password"
+            placeholder="Enter new password"
+            value={newPassword}
+            onChange={(e) => setNewPassword(e.target.value)}
+          />
+          <button onClick={resetPassword}className="hover:text-blue-700" >Reset Password</button>
+        </div>
 
-      <input
-        type="password"
-        placeholder="Enter new password"
-        value={newPassword}
-        onChange={(e) => setNewPassword(e.target.value)}
-      />
-      <button onClick={resetPassword}>Reset Password</button>
 
-      <p>{status}</p>
+        <p>{status}</p>
+      </div>
+      </div>
+     
+
     </div>
   );
 }
