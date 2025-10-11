@@ -19,10 +19,13 @@ export const auth = betterAuth({
   emailVerification: {
     sendOnSignUp: true,
     autoSignInAfterVerification: true,
-    sendVerificationEmail: async ({ user, url }) => {
+    sendVerificationEmail: async ({ user, url, token},request) => {
+      console.log(`Verification token:"${token}`)
+      console.log(`User-agent:`, request?.headers.get("user-agent"))
       await sendEmail({
         to: user.email,
         subject: "verify your email",
+        text:`click here to verify with token:${token}`,
         html: `<p>${user.name}</p> <p>click here : <a href="${url}">verify email</a></p>`,
       });
     },
