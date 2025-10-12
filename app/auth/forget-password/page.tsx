@@ -59,10 +59,10 @@ function ForgetPasswordFlow() {
     <div className="flex flex-col h-screen bg-white gap-5">
       <h2>🔐 Forgot Password</h2>
       <div className="flex flex-row items-center justify-center">
-  <div className="flex flex-col gap-5 w-[300px] h-[300px] bg-indigo-600 items-center justify-center">
+  <div className="flex flex-col gap-5 w-[300px] h-[300px] bg-gradient-to-t from-slate-100 via-sky-500 to-indigo-100  items-center justify-center">
         <div  className="flex flex-col">
           <input
-            className="bg-zinc-400"
+            className="bg-zinc-100"
             type="email"
             placeholder="Enter your email"
             value={email}
@@ -84,7 +84,7 @@ function ForgetPasswordFlow() {
 
         <div  className="flex flex-col">
           <input
-           className="bg-zinc-400"
+           className="bg-zinc-100"
             type="password"
             placeholder="Enter new password"
             value={newPassword}

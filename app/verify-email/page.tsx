@@ -15,10 +15,9 @@ export default function VerifyEmail() {
       if (res.error) {
         // show error
       } else {
-        setTimeout(()=>{
-          router.push('/dashboard')
-        }, 4000)
-       
+
+        router.push('/dashboard')
+
       }
     })()
   }, [token])

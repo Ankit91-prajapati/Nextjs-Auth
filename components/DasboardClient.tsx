@@ -25,7 +25,7 @@ export default function DashboardClientPage({ session }: { session: Session }) {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 pt-20">
         <div className="px-4 py-6 sm:px-0">
-          <div className="bg-white rounded-lg shadow p-6">
+          <div className="bg-white rounded-lg shadow p-6  bg-gradient-to-t from-slate-100 via-sky-500 to-indigo-100 ">
             <div className="flex justify-between items-start mb-6">
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">
