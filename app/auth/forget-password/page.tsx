@@ -73,7 +73,7 @@ function ForgetPasswordFlow() {
 
         <div  className="flex flex-col">
           <input
-            className="bg-zinc-400"
+            className="bg-zinc-100"
             type="text"
             placeholder="Enter OTP"
             value={otp}
@@ -90,7 +90,7 @@ function ForgetPasswordFlow() {
             value={newPassword}
             onChange={(e) => setNewPassword(e.target.value)}
           />
-          <button onClick={resetPassword}className="hover:text-blue-700" >Reset Password</button>
+          <button onClick={resetPassword} className="hover:text-blue-700" >Reset Password</button>
         </div>
 
 

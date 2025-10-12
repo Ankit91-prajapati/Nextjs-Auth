@@ -14,6 +14,8 @@ export default function VerifyEmail() {
       const res = await authClient.verifyEmail({ query: { token } })
       if (res.error) {
         // show error
+         console.error(res.error)
+
       } else {
 
         router.push('/dashboard')
