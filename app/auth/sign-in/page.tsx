@@ -3,7 +3,7 @@ import AuthClientPage from "@/components/AuthClient";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
-export default async function AuthPage() {
+export default async function SignIn() {
   const session = await auth.api.getSession({
     headers: await headers(),
   });

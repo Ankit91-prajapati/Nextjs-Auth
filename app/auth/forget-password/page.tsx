@@ -55,6 +55,7 @@ function ForgetPasswordFlow() {
     }
   };
 
+  
   return (
     <div className="flex flex-col h-screen bg-white gap-5">
       <h2>🔐 Forgot Password</h2>
@@ -68,7 +69,7 @@ function ForgetPasswordFlow() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <button onClick={sendOtp} className="hover:text-blue-700" >Send OTP</button>
+          <button onClick={sendOtp} className="hover:text-blue-700 active:text-blue-700 cursor-pointer" >Send OTP</button>
         </div>
 
         <div  className="flex flex-col">
@@ -79,7 +80,7 @@ function ForgetPasswordFlow() {
             value={otp}
             onChange={(e) => setOtp(e.target.value)}
           />
-          <button onClick={verifyOtp} className="hover:text-blue-700">Verify OTP</button>
+          <button onClick={verifyOtp} className="hover:text-blue-700 active:text-blue-700 cursor-pointer">Verify OTP</button>
         </div>
 
         <div  className="flex flex-col">
@@ -90,7 +91,7 @@ function ForgetPasswordFlow() {
             value={newPassword}
             onChange={(e) => setNewPassword(e.target.value)}
           />
-          <button onClick={resetPassword} className="hover:text-blue-700" >Reset Password</button>
+          <button onClick={resetPassword} className="hover:text-blue-700 active:text-blue-700 cursor-pointer" >Reset Password</button>
         </div>
 
 

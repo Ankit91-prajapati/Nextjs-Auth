@@ -61,7 +61,7 @@ export default function Navigation({ session }: { session: Session | null }) {
 
             {!session && (
               <Link
-                href="/auth"
+                href="/auth/sign-in"
                 className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 Sign In
