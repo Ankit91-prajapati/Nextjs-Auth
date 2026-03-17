@@ -18,6 +18,7 @@ export const auth = betterAuth({
 
   emailVerification: {
     sendOnSignUp: true,
+    sendOnSignIn:true,
     autoSignInAfterVerification: true,
     sendVerificationEmail: async ({ user, url, token},request) => {
       console.log(`Verification token:"${token}`)
@@ -29,6 +30,7 @@ export const auth = betterAuth({
         html: `<p>${user.name}</p> <p>click here : <a href="${url}">verify email</a></p>`,
       });
     },
+
     afterEmailVerification:async (user) => {
       await sendEmail({
         to: user.email,
@@ -52,12 +54,8 @@ export const auth = betterAuth({
   plugins: [nextCookies() , 
     emailOTP({
      async sendVerificationOTP({email , otp , type}){
-      if(type === "sign-in"){
-        await sendEmail({to:email , subject:"email verification",text:`Otp for email verification${otp} ` })
-      }
-
-      else if(type === "forget-password") {
-          await sendEmail({to:email , subject:"email verification",text:`Otp for password reset${otp} `})
+       if(type === "forget-password") {
+          await sendEmail({to:email , subject:"Email verification",text:`Otp for password reset :${otp} `})
          
       }
      }

@@ -304,7 +304,14 @@ export default function AuthClientPage() {
                 : "Already have an account? Sign in"}
             </button>
 
-             <button><a href="/auth/forget-password/" className="text-blue-600 hover:scale-50">change password</a></button>
+            <button>
+              <a
+                href="/auth/forget-password/"
+                className="text-blue-600 hover:scale-50"
+              >
+                change password
+              </a>
+            </button>
           </div>
         </div>
       </div>
