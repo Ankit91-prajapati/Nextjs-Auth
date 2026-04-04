@@ -15,7 +15,7 @@ export default function DashboardClientPage({ session }: { session: Session }) {
   fetchOptions: {
     onSuccess: () => {
       router.refresh()
-      router.push("/auth/sign-in"); // redirect to login page
+      router.push("/auth"); // redirect to login page
     },
   },
 });
