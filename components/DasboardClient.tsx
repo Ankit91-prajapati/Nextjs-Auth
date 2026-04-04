@@ -15,7 +15,7 @@ export default function DashboardClientPage({ session }: { session: Session }) {
   fetchOptions: {
     onSuccess: () => {
       router.refresh()
-      router.push("/auth"); // redirect to login page
+      router.push("/auth/sign-in"); // redirect to login page
     },
   },
 });
@@ -47,7 +47,7 @@ export default function DashboardClientPage({ session }: { session: Session }) {
                   />
                   <div className="text-sm">
                     <p className="text-gray-900 font-medium">{user.name}</p>
-                    <p className="text-gray-500">{user.email}</p>
+                    <p className="text-gray-500 hidden md:block">{user.email}</p>
                   </div>
                 </div>
                 <button
@@ -77,7 +77,7 @@ export default function DashboardClientPage({ session }: { session: Session }) {
                 </div>
                 <div>
                   <span className="font-medium text-blue-700">User ID:</span>
-                  <span className="ml-2 text-blue-600">{user.id}</span>
+               
                 </div>
                 <div>
                   <span className="font-medium text-blue-700">
